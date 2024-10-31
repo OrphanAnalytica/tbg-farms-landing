@@ -3,107 +3,186 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TBG Farms - Coming Soon</title>
+    <title>TBG Farms - Home</title>
+    <link rel="stylesheet" href="styles.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body, html {
-            height: 100%;
+        body {
             font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            overflow-x: hidden;
         }
-        .video-container {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            z-index: -1;
-        }
-        #bg-video {
-            min-width: 100%;
-            min-height: 100%;
-            width: auto;
-            height: auto;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            object-fit: cover;
-        }
-        .content {
+        header {
             position: relative;
-            text-align: center;
-            padding: 20px;
-            color: white;
-            height: 100%;
+            height: 100vh;
+            overflow: hidden;
+            color: #fff;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            background-color: rgba(0, 0, 0, 0.5);
+            text-align: center;
         }
-        h1 {
-            font-size: 3em;
+        video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+        }
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+        .logo {
+            width: 150px;
             margin-bottom: 20px;
         }
-        p {
-            font-size: 1.2em;
-            margin-bottom: 30px;
-        }
-        .email-form {
-            margin-bottom: 30px;
-        }
-        .email-form input[type="email"] {
-            padding: 10px;
-            width: 250px;
-            border: none;
-            border-radius: 5px 0 0 5px;
-        }
-        .email-form button {
-            padding: 10px 20px;
+        nav {
             background-color: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 0 5px 5px 0;
-            cursor: pointer;
+            overflow: hidden;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        nav ul li {
+            margin: 0;
+        }
+        nav ul li a {
+            display: block;
+            padding: 15px 20px;
+            color: #fff;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+        nav ul li a:hover {
+            background-color: #3e8e41;
+        }
+        .content-section {
+            padding: 50px;
+            background-color: #fff;
+            margin: 20px auto;
+            max-width: 1000px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .why-choose {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .why-choose div {
+            width: 30%;
+            padding: 20px;
+            margin: 10px;
+            text-align: center;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
         footer {
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-            padding: 20px;
-            background-color: rgba(0, 0, 0, 0.7);
-            color: white;
+            background-color: #333;
+            color: #fff;
             text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        .footer-content {
+            margin: 10px;
+        }
+        .social-links img {
+            width: 30px;
+            margin: 5px;
+        }
+        @media (max-width: 768px) {
+            .why-choose div {
+                width: 100%;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="video-container">
-        <video autoplay loop muted playsinline id="bg-video">
-            <source src="https://i.imgur.com/AtMSbzeb.mp4" type="video/mp4">
+    <header>
+        <video autoplay muted loop>
+            <source src="/mnt/data/tbgfarms_video.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
+        <div class="overlay"></div>
+        <div class="header-content">
+            <img class="logo" src="https://i.imgur.com/ulSyhmN.jpg" alt="TBG Farms Logo">
+            <h1>Welcome to TBG Farms</h1>
+            <h3>Transforming Pig Farming in Liberia</h3>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="our_story.html">OUR STORY</a></li>
+            <li><a href="services.html">SERVICES</a></li>
+            <li><a href="farmer_registration.html">FARMER REGISTRATION</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+        </ul>
+    </nav>
+
+    <div class="content-section">
+        <h2>Why Choose TBG Farms?</h2>
+        <div class="why-choose">
+            <div>
+                <h3>Superior Genetics</h3>
+                <p>We provide improved breeds like the resilient <strong>Duroc pigs</strong>, ensuring healthier and more productive livestock.</p>
+            </div>
+            <div>
+                <h3>Formulated Feed</h3>
+                <p>TBG Farms crafts its feed with a focus on sustainable and local sourcing, featuring cassava meal as a primary energy source. We enrich this with other locally available ingredients, ensuring a well-rounded diet that supports the health and growth of our pigs.</p>
+            </div>
+            <div>
+                <h3>Community Empowerment</h3>
+                <p>Offering training programs and resources to support local farmers and foster economic growth.</p>
+            </div>
+        </div>
     </div>
-    
-    <div class="content">
-        <h1>Welcome to TBG Farms</h1>
-        <p>We're working on something exciting. Stay tuned!</p>
-        <form class="email-form">
-            <input type="email" placeholder="Enter your email" required>
-            <button type="submit">Get Updates</button>
-        </form>
+
+    <div class="content-section">
+        <h2>Join Our Community</h2>
+        <p>Be part of a sustainable future in Liberian pig farming. Subscribe to stay updated on our latest initiatives, training programs, and special offers.</p>
+        <input type="email" placeholder="Enter your email" style="padding: 10px; width: 70%; max-width: 300px;">
+        <button style="padding: 10px 20px; background-color: #4CAF50; color: #fff; border: none; cursor: pointer;">Subscribe</button>
     </div>
 
     <footer>
-        <p>Contact us:</p>
-        <p>Taye Town, Neekreen Township, Buchanan, Liberia</p>
-        <p>Phone: +231 77 732 3580</p>
-        <p>Email: Info@tbgliberia.com</p>
+        <div class="footer-content">
+            <h3>Connect With Us</h3>
+            <p>
+                📍 <strong>Location:</strong> Taye Town, Neekreen Township, Grand Bassa County, Liberia<br>
+                📞 <strong>Contact:</strong> +231886936060<br>
+                ✉️ <strong>Email:</strong> <a href="mailto:Info@tbgliberia.com" style="color: #4CAF50;">Info@tbgliberia.com</a>
+            </p>
+        </div>
+        <div class="footer-content">
+            <h3>Follow Us</h3>
+            <div class="social-links">
+                <a href="#"><img src="https://i.imgur.com/4YowWk5.png" alt="Facebook"></a>
+                <a href="#"><img src="https://i.imgur.com/fep1D5O.png" alt="Twitter"></a>
+                <a href="#"><img src="https://i.imgur.com/6hH5M8K.png" alt="Instagram"></a>
+            </div>
+        </div>
     </footer>
 </body>
 </html>
